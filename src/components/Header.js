@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = ({ setFilter, setSort }) => {
   return (
     <header>
       <div className="logo">Are you victim</div>
       <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-        <a href="/contact">Contact</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/create">Create Post</Link>
       </nav>
       <div className="controls">
         <select onChange={(e) => setFilter(e.target.value)}>
@@ -29,3 +31,5 @@ const Header = ({ setFilter, setSort }) => {
 }
 
 export default Header;
+
+

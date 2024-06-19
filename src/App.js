@@ -3,6 +3,7 @@ import Header from '../src/components/Header';
 import BlogPost from '../src/components/BlogPost';
 import BlogDetails from '../src/components/BlogDetails';
 import Footer from '../src/components/Footer';
+import CreateBlogPost from '../src/components/CreateBlogPost';
 import './styles.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -61,7 +62,9 @@ const App = () => {
     return array;
   }
 
-
+  const addBlogPost = (newPost) => {
+    setBlogPosts([newPost, ...blogPosts]);
+  };
 
   return (
     <Router>
@@ -73,6 +76,7 @@ const App = () => {
                 <BlogPost key={post.id} post={post} />
               ))} /> 
               <Route path="/blog/:id" element={<BlogDetails blogPosts={blogPosts} />} />
+              <Route path="/create" element={<CreateBlogPost addBlogPost={addBlogPost} />} />
           </Routes>
         </main>
         <Footer />
