@@ -1,0 +1,219 @@
+/* styles.css */
+
+/* Reset styles and general settings */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', 'Arial', sans-serif; /* Example of user-friendly font */
+    margin: 0;
+    padding: 0;
+    background-color: #ECF0F1;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+}
+
+header nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+header .controls {
+    display: flex;
+    gap: 1rem; /* Add gap between controls */
+}
+
+header .controls select {
+    padding: 0.5rem;
+    border: none;
+    background-color: #3498DB;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header .controls select:hover {
+    background-color: #2980B9;
+}
+
+/* Main content styles */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.blog-post {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.blog-post h2 {
+    background-color: #3498DB;
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.blog-post p {
+    margin: 0.5rem 0;
+}
+
+.blog-post .content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.blog-post .content:not(.expanded) {
+    -webkit-line-clamp: 10;
+}
+
+.blog-post .read-more {
+    background-color: transparent;
+    border: none;
+    color: #3498DB;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2C3E50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer a {
+    color: #3498DB;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+footer .newsletter {
+    margin-bottom: 1rem;
+}
+
+footer .newsletter input[type="email"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 0.5rem;
+}
+
+footer .newsletter button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #3498DB;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer .newsletter button:hover {
+    background-color: #2980B9;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo {
+        margin-bottom: 1rem;
+    }
+
+    header nav {
+        margin-top: 1rem;
+    }
+
+    header .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .controls select {
+        margin: 0.5rem 0;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.5rem;
+    }
+
+    footer .newsletter input[type="email"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header .controls {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    header .controls select {
+        margin: 0;
+    }
+
+    .content {
+        padding: 0.5rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+
+    footer .newsletter input[type="email"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
